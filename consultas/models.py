@@ -7,4 +7,3 @@ class Profissional(models.Model):
 class Consulta(models.Model):
     profissional = models.ForeignKey(Profissional, on_delete=models.CASCADE)
     data_consulta = models.DateField()
-    # outros campos da consulta, se houver

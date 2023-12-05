@@ -8,7 +8,7 @@ import json
 
 @csrf_exempt
 def listar_consultas(request):
-    consultas = Consulta.objects.all().values()  # Obter todas as consultas do banco de dados
+    consultas = Consulta.objects.all().values()
     return JsonResponse(list(consultas), safe=False)
 
 @csrf_exempt
