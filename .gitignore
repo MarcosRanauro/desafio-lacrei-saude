@@ -1,0 +1,32 @@
+# Arquivos de Byte Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Arquivos de Log
+*.log
+
+# Arquivos de Configuração
+*.ini
+*.env
+
+# Arquivos de Cache
+*.swp
+.cache/
+
+# Arquivos de Build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Arquivos de Dependências
+.idea/
+*.sqlite3
+db.sqlite3
