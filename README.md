@@ -1,4 +1,4 @@
-# Desafio Lacrei Saúde
+# Desafio Lacrei Saúde!
 
 <h2>Descrição</h2>
 Desenvolver uma API que gerencia consultas médicas, utilizando Python + Django!

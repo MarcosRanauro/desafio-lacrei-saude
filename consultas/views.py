@@ -97,7 +97,7 @@ def deletar_consulta(request, consulta_id):
 
     return JsonResponse({'status': 'error', 'message': 'Delete request failed'})
 
-@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 def criar_profissionais(request):
     logger = logging.getLogger(__name__)
 
@@ -127,13 +127,12 @@ def criar_profissionais(request):
             logger.exception(f"Erro ao criar o profissional: {str(e)}")
             return JsonResponse({'status': 'error', 'message': str(e)})
 
-@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 def listar_profissionais(request):
     if request.method == 'GET':
         profissionais = Profissional.objects.all().values()
         return JsonResponse(list(profissionais), safe=False)
 
-@method_decorator(csrf_exempt, name='dispatch')
 def detalhe_profissional(request, profissional_id):
     profissional = get_object_or_404(Profissional, pk=profissional_id)
     if request.method == 'GET':
@@ -143,7 +142,7 @@ def detalhe_profissional(request, profissional_id):
             'nome_social': profissional.nome_social
         })
 
-@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 def atualizar_profissional(request, profissional_id):
     logger = logging.getLogger(__name__)
     profissional = get_object_or_404(Profissional, pk=profissional_id)
@@ -166,7 +165,7 @@ def atualizar_profissional(request, profissional_id):
             return JsonResponse({'status': 'error', 'message': str(e)})
     return JsonResponse({'status': 'error', 'message': 'Método não permitido'})
     
-@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 def deletar_profissional(request, profissional_id):
     try:
         profissional = get_object_or_404(Profissional, pk=profissional_id)
